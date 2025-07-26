@@ -2092,6 +2092,22 @@
       visibility: visible;
       opacity: 1;
     }
+
+    /* --- Instruções de Instalação para iOS --- */
+    #instrucoes-ios {
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 150;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
   </style>
 </head>
 
@@ -2492,7 +2508,7 @@
   </div>
 
   <!-- Tela de Instalação (iOS) -->
-  <div id="instrucoes-ios" class="tela" style="background-color: #fff; color: #000; text-align: center; padding: 20px;">
+  <div id="instrucoes-ios" class="tela">
     <h2>Instalar Cardápio</h2>
     <p>Para instalar o app, toque no ícone de compartilhamento <i class="fa-solid fa-share-from-square"></i> e depois em "Adicionar à Tela de Início".</p>
     <br>
