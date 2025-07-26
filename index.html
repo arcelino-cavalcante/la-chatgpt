@@ -2532,6 +2532,12 @@
     let deferredPrompt;
     const btnInstalar = document.getElementById('btnInstalar');
     const instrucoesIos = document.getElementById('instrucoes-ios');
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isInStandaloneMode = ('standalone' in window.navigator) && window.navigator.standalone;
+
+    if (isIOS && !isInStandaloneMode) {
+      btnInstalar.style.display = 'block';
+    }
 
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
@@ -2540,7 +2546,6 @@
     });
 
     btnInstalar.addEventListener('click', (e) => {
-      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
       if (isIOS) {
         instrucoesIos.classList.add('active');
       } else {
